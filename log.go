@@ -111,3 +111,19 @@ func Time(key string, value time.Time) zap.Field {
 func Duration(key string, value time.Duration) zap.Field {
 	return zap.Duration(key, value)
 }
+
+func Error(err error) zap.Field {
+	return zap.Error(err)
+}
+
+func Errors(key string, errs []error) zap.Field {
+	return zap.Errors(key, errs)
+}
+
+func Object(key string, value zapcore.ObjectMarshaler) zap.Field {
+	return zap.Object(key, value)
+}
+
+func Stringer(key string, value fmt.Stringer) zap.Field {
+	return zap.Stringer(key, value)
+}
